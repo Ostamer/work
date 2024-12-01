@@ -1,0 +1,30 @@
+<!-- my_app/templates/my_app/video_review_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Видео отзывы</title>
+</head>
+<body>
+    <h1>Видео отзывы</h1>
+
+    <!-- Кнопка для обновления видео -->
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Обновить видео</button>
+    </form>
+
+    <ul>
+        {% for video in videos %}
+            <li>
+                <a href="{{ video.url }}" target="_blank">{{ video.title }}</a><br>
+                <p>{{ video.description }}</p>
+                <small>Опубликовано: {{ video.published_at }}</small>
+            </li>
+        {% empty %}
+            <li>Нет видео для отображения.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
