@@ -1,0 +1,54 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/map.css'%}">
+    <title>Document</title>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+    <div class="map_container">
+        <!-- Контейнер для карты -->
+        <div id="map"></div>
+
+        <!-- Контейнер с контактной информацией -->
+        <div class="contact_info_block">
+            <div class="content_contact_info">
+                <p>г. Владивосток, ул. Пологая 63</p> </br>
+                <p>+7 (995) 870-00-94</p>
+                <a style="color:#ff8562;">nasag_group@mail.ru</a></br></br>
+                <p style="font-weight:600;">График работы:</p>
+                <p>9:00 - 20:00 пн-пт</p>
+                <p>9:00 - 16:00 сб</p>
+                <p>Выходной - вс</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        ymaps.ready(function () {
+            var map = new ymaps.Map("map", {
+                center: [43.120998, 131.888880], // Координаты Владивостока
+                zoom: 14, // Начальный масштаб
+                controls: ['zoomControl'], // Включаем ползунок для изменения масштаба
+                behaviors: ['default'], // Оставляем стандартное поведение
+            });
+
+            // Отключаем возможность масштабирования колесиком мыши и сенсорным экраном
+            map.behaviors.disable(['scrollZoom', 'multiTouch']);
+
+            // Добавление маркера на карту
+            var placemark = new ymaps.Placemark([43.120998, 131.888880], {
+                balloonContent: 'г. Владивосток, ул. Пологая 63'
+            });
+
+            map.geoObjects.add(placemark);
+        });
+    </script>
+
+</body>
+</html>

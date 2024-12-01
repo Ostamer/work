@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Accordion</title>
+    <link rel="stylesheet" href="{% static 'css/request.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+</head>
+<body>
+        <div class="request_card">
+            <div class="text_info">
+                <h1 style="color: black;">
+                    <span>ОСТАВЬТЕ ЗАЯВКУ НА</span>
+                    <span style="padding: 5px;" class="orange-background">БЕСПЛАТНЫЙ</span></br>
+                    <span>ВЫЕЗД НАШЕГО СПЕЦИАЛИСТА</span>
+                </h1>
+                <h3>
+                    Мы гарантируем комфорт и спокойствие вашей</br>
+                    семьи благодаря ремонту высочайшего качества!
+                </h3>
+                <h2>
+                    + получите 30 000 р. на закупку чернового материала
+                </h2>
+                <form class="input_container">
+                    <input type="text" placeholder="Ваше имя" class="input_field" required />
+                    <input type="tel" placeholder="+7 (999) 999-99-99" class="phone_field" required />
+                    <button type="submit" class="submit_button">Отправить заявку</button>
+                    <p class="consent_text" style="font-size:14px;">
+                        Нажимая на кнопку, вы даете согласие на обработку своих персональных данных и соглашаетесь с
+                        <a href="{% static 'docs/politica.pdf' %}" target="_blank">Пользовательским соглашением</a>
+                    </p>
+                </form>
+            </div>
+            <div class="image_container">
+                <img src="{% static 'images/family.jpg' %}" alt="Family Image">
+            </div>
+        </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+    <script src="{% static 'js/ajax.js' %}"></script>
+</body>
+</html>

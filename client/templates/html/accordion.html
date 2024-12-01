@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Accordion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/accordion.css'%}">
+</head>
+<body>
+    <div class="accordion-container">
+        <div class="custom-accordion accordion" id="faqAccordion">
+            <!-- Вопрос 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Вы выполняете ремонт под ключ?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                         «Nasag Group» c 2019 года выполняет ремонты квартир «под ключ».</br></br>
+                        Основные услуги и товары, которые чаще всего заказывают клиенты под ключ:
+                        <ul>
+                            <li>Разработка детального дизайн-проекта интерьера.</li>
+                            <li>Ремонт и отделка квартир под ключ.</li>
+                            <li>Комплектация объекта черновыми материалами.</li>
+                        </ul>
+                        Заказывая все услуги под ключ Вам не нужно тратить свое время и нервы, искать бригаду, координировать</br>
+                        подрядчиков, постоянно находиться на объекте, доставлять материалы и т.п. Вы можете заказать как полный</br>
+                        комплекс услуг под ключ с единым исполнителем и единой гарантией на все услуги.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вопрос 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Сколько стоит ремонт квартиры?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Стоимость ремонта зависит от объема работ, материалов и дизайна. Для точного расчета обратитесь к нам.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вопрос 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Сколько стоит выезд замерщика для составления сметы?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Выезд замерщика бесплатный при заказе ремонта. Свяжитесь с нами для записи.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

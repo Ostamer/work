@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+    <header id="header">
+        <img class="logo_img" src="{% static 'images/logo.png' %}">
+        <div class="navigation">
+            <a href="https://www.example.com" style="text-decoration: none; color:white;">Ремонт квартир</a>
+            <a href="https://www.example.com" style="text-decoration: none;">Приемка ремонта</a>
+            <a href="https://www.example.com" style="text-decoration: none;">Дизайн-проект</a>
+        </div>
+        <div class="header-right-panel">
+            <p style="margin-bottom:0; font-size:20px;">8 (995) 870 00 94</p>
+            <div class="header-icons">
+                <a href="https://wa.me/79958700094" target="_blank">
+                    <img style="height:25px;" src="{% static 'images/whatsapp.png' %}" alt="WhatsApp">
+                </a>
+                <a href="https://t.me/NasagGroup" target="_blank">
+                    <img style="height:25px;" src="{% static 'images/telega.png' %}" alt="Telegram">
+                </a>
+            </div>
+        </div>
+        <button class="header-button">Оставить заявку</button>
+    </header>
+    <div class=background-color>
+        <div class="background-block-first-screen">
+            <div class="custom-block">
+                <h1 style="font-size: 42px;">
+                    <span class="orange-background">РЕМОНТ КВАРТИР</span><br>
+                    <span class="orange-background">И ДОМОВ ПОД КЛЮЧ</span>
+                </h1>
+                <h1 class="white-text">С ГАРАНТИЕЙ 1 ГОД </h1>
+                <div class="icons-container">
+                    <div class="icons-container-content">
+                        <img src="{% static 'images/plan.png' %}" alt="">
+                        <p>Бесплатный<br>дизайн проект</p>
+                    </div>
+                    <div class="icons-container-content">
+                        <img src="{% static 'images/free.png' %}" alt="">
+                        <p>Выезд оценщика бесплатно<br>в день заказа</p>
+                    </div>
+                    <div class="icons-container-content">
+                        <img src="{% static 'images/gift.png' %}" alt="">
+                        <p>30 т.р. на материалы<br>в подарок</p>
+                    </div>
+                    <div class="icons-container-content">
+                        <img src="{% static 'images/time.png' %}" alt="">
+                        <p>Приступим уже через<br>неделю</p>
+                    </div>
+                    <button class="black-button">НАПИСАТЬ В WHATSAPP</button>
+                    <button class="yellow-button">РАССЧИТАТЬ СТОИМОСТЬ</button>
+                </div>
+            </div>
+        </div>
+        <div class="button-menu">
+            <button class="instagram-button">Нельзяграм @nasag_group</button>
+            <button class="telegram-button">Telegram @nasag_group</button>
+        </div>
+        <div class="title">
+            <h1>
+                <span style="color: #fff;">НАШИ</span> 
+                <span style="color: #FFCE53;">УСЛУГИ ДЛЯ ВАС</span>
+            </h1>
+        </div>
+        <div class="services">
+            <div class="service-item">
+                <img src="{% static 'images/assessment_service.jpg' %}" alt="Оценка">
+                <p class="service-text">Приемка квартир</p>
+            </div>
+            <div class="service-item">
+                <img src="{% static 'images/design_service.jpg' %}" alt="Дизайн">
+                <p class="service-text">Дизайн-проекты</p>
+            </div>
+            <div class="service-item">
+                <img src="{% static 'images/build_service.jpg' %}" alt="Строительство">
+                <p class="service-text">Ремонт квартир</p>
+            </div>
+        </div>        
+        <div class="title">
+            <h1>
+                <span style="color: #fff;">ОТВЕТЬТЕ НА 5 ВОПРОСОВ И ПОЛУЧИТЕ</span><br> 
+                <span style="color: #FFCE53;">30.000 РУБЛЕЙ В ПОДАРОК</span>
+                <span style="color: #fff;">НА</span><br>
+                <span style="color: #fff;">ЗАКУПКУ МАТЕРИАЛОВ</span><br>
+            </h1>
+        </div>
+        <div class="quiz_block">
+            {% include 'html/quiz.html' %}
+        </div>
+        <div class="title">
+            <h1>
+                <span style="color: #fff;">ВСЕГО</span> 
+                <span style="color: #FFCE53;">5 ШАГОВ</span>
+                <span style="color: #fff;">К РЕМОТНУ ВАШЕЙ МЕЧТЫ </span>
+            </h1>
+        </div>
+        <section class="steps">
+            <div class="step">
+                <div class="circle">
+                    <div class="circle-number">01</div>
+                    <p>Вы оставляете заявку на нашем сайте</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="circle">
+                    <div class="circle-number">02</div>
+                    <p>Менеджер свяжется и согласует день и время замера</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="circle">
+                    <div class="circle-number">03</div>
+                    <p>Наш специалист проведет замеры и проконсультирует</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="circle">
+                    <div class="circle-number">04</div>
+                    <p>Получаете смету уже через 24 часа</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="circle">
+                    <div class="circle-number">05</div>
+                    <p>Заключение договора и выезд команды мастеров</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="circle">
+                    <div class="circle-number">06</div>
+                    <p>ЗАКАЗАТЬ СЕЙЧАС</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="circle">
+                    <div class="circle-number">07</div>
+                    <p>ЗАКАЗАТЬ СЕЙЧАС</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="circle">
+                    <div class="circle-number">08</div>
+                    <p>ЗАКАЗАТЬ СЕЙЧАС</p>
+                </div>
+            </div>
+        </section>
+        <div class ="title">
+            <h1>
+                <span style="color: #fff;">БЛАГОДАРНОСТИ КЛИЕНТОВ</span> 
+                <span style="color: #FFCE53;">"NASAG GROUP"</span><br/>
+                <span style="color: #FFCE53; font-size: 24px;">Более 100 семей уже стали счастливыми с ремонтом мечты от NasagGroup</span>
+            </h1>
+        </div> 
+        <div class="swiper_block">
+            {% include 'html/swiper.html' %}
+        </div>
+        <div class ="title">
+            <h1>
+                <span style="color: #fff;">ТОП ВОПРОСОВ О РЕМОНТЕ КВАРТИР</span> 
+            </h1>
+        </div>
+        {% include 'html/accordion.html' %}
+        {% include 'html/request.html' %}
+        {% include 'html/map.html' %}
+        <footer>
+            <img class="logo_img" src="{% static 'images/logo.png' %}" alt="Logo">
+            <div class="footer_service" style="color:white;">
+                <h6>Наши услуги</h6>
+                <div class="footer_text">
+                    <p>Приемка квартир после ремонта</p>
+                    <p>Ремонт квартир в новостройках</p>
+                    <p>Дизайн-проекты</p>
+                    <p>Ремонт квартир в частных домах</p>
+                </div>
+            </div>
+            <div class="footer_links">
+                <h6>Полезные ссылки</h6>
+            </div>
+            <div class="footer_number">
+                <h6>7 (995) 870-00-94</h6>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            const ajaxSubmitClientUrl = "{% url 'ajax_submit_client' %}";
+            const csrfToken = "{{ csrf_token }}";
+        </script>
+        <script src="{% static 'js/ajax.js' %}"></script>
+        <script src="{% static 'js/header.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+/* Основной стиль шапки */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 15px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    transition: top 0.3s;
+    gap:3%
+}
+
+.logo_img_ref {
+    margin-left: 10px;
+}
+
+.logo_img {
+    width: 170px;
+    height: auto;
+}
+
+.burger-menu {
+    display: none; /* Скрыто по умолчанию */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Навигация */
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.navigation.active {
+    display: flex;
+    flex-direction: column; /* Вертикальное меню в мобильной версии */
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+/* Правая панель */
+.header-right-panel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.header-right-panel p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.header-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+}
+
+.header-button {
+    background-color: #ffce53;
+    color: black;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo_img_ref {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    .navigation {
+        display: none; /* Скрыто по умолчанию */
+    }
+
+    .navigation a {
+        color: black;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .header-right-panel {
+        display: none; /* Скрываем контакты */
+    }
+
+    .header-button {
+        display: none;
+    }
+
+    .navigation.active {
+        display: flex; /* Отображаем навигацию при клике на бургер */
+    }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рабочий слайдер со стрелками</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+  <link rel="stylesheet" href="{% static 'css/slider-team.css' %}">
+</head>
+<body>
+<div class="swiper sample-slider">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="{% static 'images/sotr.jpg' %}" alt="Оценка">
+            <p>Должность</p>
+            <p>Имя Фамилия</p>
+        </div>
+        <div class="swiper-slide">
+            <img src="{% static 'images/sotr.jpg' %}" alt="Оценка">
+            <p>Должность</p>
+            <p>Имя Фамилия</p>
+        </div>
+        <div class="swiper-slide">
+            <img src="{% static 'images/sotr.jpg' %}" alt="Оценка">
+            <p>Должность</p>
+            <p>Имя Фамилия</p>
+        </div>
+        <div class="swiper-slide">
+            <img src="{% static 'images/sotr.jpg' %}" alt="Оценка">
+            <p>Должность</p>
+            <p>Имя Фамилия</p>
+        </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+    const swiper1 = new Swiper('.sample-slider', {
+        loop: true,
+        speed: 500,
+        slidesPerView: 4,
+        spaceBetween: 20, // Добавление отступов между слайдами (в пикселях)
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    })
+</script>
+</body>
+</html>

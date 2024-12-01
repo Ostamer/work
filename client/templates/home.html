@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+{% endblock %}
+
+{% block content %}
+<body>
+    <div class="main-container">
+        <div class="background-block-first-screen">
+            <div class="custom-block">
+                <h1 class="welcome-text-block">
+                    <span class="orange-background">РЕМОНТ КВАРТИР И ДОМОВ</span><br>
+                    <span class="orange-background">ПОД КЛЮЧ</span>
+                </h1>
+                <h1 class="white-text">С ГАРАНТИЕЙ 1 ГОД </h1>
+                <div class="icons-container">
+                    <div class="icons-container-content">
+                        <img src="{% static 'images/plan.png' %}" alt="">
+                        <h2>Бесплатный<br>дизайн проект</h2>
+                    </div>
+                    <div class="icons-container-content">
+                        <img src="{% static 'images/free.png' %}" alt="">
+                        <h2>Выезд оценщика бесплатно<br>в день заказа</h2>
+                    </div>
+                    <div class="icons-container-content">
+                        <img src="{% static 'images/gift.png' %}" alt="">
+                        <h2>30 т.р. на материалы<br>в подарок</h2>
+                    </div>
+                    <div class="icons-container-content">
+                        <img src="{% static 'images/time.png' %}" alt="">
+                        <h2>Приступим уже через<br>неделю</h2>
+                    </div>
+                    <a href="https://wa.me/79958700094" style="text-align:center; text-decoration:none;" class="black-button">aboba</a>
+                    <button class="yellow-button" onclick="openModal()">РАССЧИТАТЬ СТОИМОСТЬ</button>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="button-menu">
+                <a href="https://www.instagram.com/@nasag_group">
+                    <button class="instagram-button">Нельзяграм @nasag_group</button>
+                </a>
+                <a href="https://t.me/NasagGroup">
+                    <button class="telegram-button">Telegram @nasag_group</button>
+                </a>
+            </div>
+            <div class="title">
+                <h1>
+                    <span style="color: #fff;">НАШИ </span>
+                    <span style="color: #FFCE53;">УСЛУГИ - ДЛЯ ВАС</span>
+                </h1>
+            </div>
+            <div class="services">
+                <a class="service-item" href="{% url 'assessment' %}" style="text-decoration: none; color:white;">
+                    <img src="{% static 'images/assessment_service.jpg' %}" alt="Оценка">
+                    <p class="service-text">Приемка квартир</p>
+                    <div class="hover-image">
+                        <button class="service_button"> Узнать больше</button>
+                    </div>
+                </a>
+                <a class="service-item" href="{% url 'design' %}" style="text-decoration: none; color:white;">
+                    <img src="{% static 'images/design_service.jpg' %}" alt="Дизайн">
+                    <p class="service-text">Дизайн-проекты</p>
+                    <div class="hover-image">
+                        <button class="service_button"> Узнать больше</button>
+                    </div>
+                </a>
+                <a class="service-item" href="{% url 'build' %}" style="text-decoration: none; color:white;">
+                    <img src="{% static 'images/build_service.jpg' %}" alt="Строительство">
+                    <p class="service-text">Ремонт квартир</p>
+                    <div class="hover-image">
+                        <button class="service_button"> Узнать больше</button>
+                    </div>
+                </a>
+            </div>
+            <div class="title">
+                <h1>
+                    <span style="color: #fff;">ОТВЕТЬТЕ НА 5 ВОПРОСОВ И ПОЛУЧИТЕ</span><br>
+                    <span style="color: #FFCE53;">30.000 РУБЛЕЙ В ПОДАРОК</span>
+                    <span style="color: #fff;">НА</span><br>
+                    <span style="color: #fff;">ЗАКУПКУ МАТЕРИАЛОВ</span><br>
+                </h1>
+            </div>
+            {% include 'html/quiz.html' %}
+            <div class="title">
+                <h1>
+                    <span style="color: #fff;">ВСЕГО</span>
+                    <span style="color: #FFCE53;">5 ШАГОВ</span>
+                    <span style="color: #fff;">К РЕМОТНУ ВАШЕЙ МЕЧТЫ </span>
+                </h1>
+            </div>
+            <section class="steps">
+                <div class="step">
+                    <div class="circle">
+                        <div class="circle-number">01</div>
+                        <p>Вы оставляете заявку на нашем сайте</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="circle">
+                        <div class="circle-number">02</div>
+                        <p>Менеджер свяжется и согласует день и время замера</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="circle">
+                        <div class="circle-number">03</div>
+                        <p>Наш специалист проведет замеры и проконсультирует</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="circle">
+                        <div class="circle-number">04</div>
+                        <p>Получаете смету уже через 24 часа</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="circle">
+                        <div class="circle-number">05</div>
+                        <p>Заключение договора и выезд команды мастеров</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="circle">
+                        <div class="circle-number">06</div>
+                        <p>ЗАКАЗАТЬ СЕЙЧАС</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="circle">
+                        <div class="circle-number">07</div>
+                        <p>ЗАКАЗАТЬ СЕЙЧАС</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="circle">
+                        <div class="circle-number">08</div>
+                        <p>ЗАКАЗАТЬ СЕЙЧАС</p>
+                    </div>
+                </div>
+            </section>
+            <div class ="title">
+                <h1>
+                    <span style="color: #fff;">БЛАГОДАРНОСТИ КЛИЕНТОВ</span>
+                    <span style="color: #FFCE53;">"NASAG GROUP"</span><br/>
+                    <span style="color: #FFCE53; font-size: 24px;">Более 100 семей уже стали счастливыми с ремонтом мечты от NasagGroup</span>
+                </h1>
+            </div>
+            {% include 'html/swiper.html' %}
+            <div class ="title">
+                <h1>
+                    <span style="color: #fff;">ТОП ВОПРОСОВ О РЕМОНТЕ КВАРТИР</span>
+                </h1>
+            </div>
+            {% include 'html/accordion.html' %}
+            <div class="title"></div>
+            {% include 'html/request.html' %}
+            <div class="title"></div>
+        </div>
+    </div>
+</body>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+{% endblock %}

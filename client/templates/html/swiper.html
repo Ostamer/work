@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рабочий слайдер со стрелками</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
+</head>
+<body>
+
+    <div class="base">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="{% static 'images/build_service.jpg' %}" style="width: 500px; align-items: center;" alt="">
+                    <div class="swiper-text">
+                        <p>Благодарю компанию Nasag Group за профессиональный ремонт квартиры под ключ для нас с моей женой! Мы молодая пара и хотели, чтобы наш первый совместный дом стал по-настоящему уютным и стильным. Работа выполнена отлично – от дизайн-проекта до последних штрихов. Мастера проявили творческий подход и внимательно</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'images/build_service.jpg' %}" style="width: 500px; align-items: center;" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static 'images/build_service.jpg' %}" style="width: 500px;" alt="">
+                </div>
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+  
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      loop: true, 
+      autoplay: {
+        delay: 3000,
+      },
+      speed: 500, 
+    });
+  </script>
+
+</body>
+</html>

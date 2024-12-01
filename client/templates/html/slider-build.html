@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рабочий слайдер со стрелками</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="{% static 'css/slider-build.css' %}">
+</head>
+<body>
+
+<div class="base">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% static 'images/divan-build.jpg' %}');">
+                <div class="swiper-block-content">
+                    <p class="swiper-build-title">Косметический ремонт</p>
+                    <p class="swiper-build-subtitle">
+                        от 20.000 за м2
+                    </p>
+                    <p class="swiper-build-text">
+                        Когда "всё вроде хорошо, но...". Поможем найти все недостатки, составим план ремонта и спроектируем дизайн! Вы можете доверить свой комфорт нам!
+
+                    </p>
+                    <button class="swiper-build-button">
+                        Заказать замеры
+                    </button>
+                </div>
+            </div>
+            <div class="swiper-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% static 'images/town-build.jpg' %}');">
+                <div class="swiper-block-content">
+                    <p class="swiper-build-title">Капитальный ремонт</p>
+                    <p class="swiper-build-subtitle">
+                        от 20.000 за м2
+                    </p>
+                    <p class="swiper-build-text">
+                        Капитальный ремонт необходим, если много лет назад планировали сделать "классный евроремонт", а остановились на обоях. Мы поможем спроектировать, закупим материалы и доведем ремонт до конца в кратчайшие сроки!
+                    </p>
+                    <button class="swiper-build-button">
+                        Заказать замеры
+                    </button>
+                </div>
+            </div>
+            <div class="swiper-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% static 'images/cement-build.jpg' %}');">
+                <div class="swiper-block-content">
+                    <p class="swiper-build-title">Ремонт в новостройке</p>
+                    <p class="swiper-build-subtitle">
+                        от 20.000 за м2
+                    </p>
+                    <p class="swiper-build-text">
+                        Только купили квартиру, а жить в ней всё ещё не можете? Мы поможем превратить холодные стены в уютный дом, где вы сможете жить комфортно.
+                    </p>
+                    <button class="swiper-build-button">
+                        Заказать замеры
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      loop: true,
+      autoplay: {
+        delay: 20000,
+      },
+      speed: 500,
+    });
+  </script>
+
+</body>
+</html>

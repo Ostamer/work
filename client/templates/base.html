@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/header.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+    {% block css %}{% endblock %}
+</head>
+<body>
+    <div class="wrapper" style="height:vh; width:100%; position: relative; background-color:black;">
+        <div class="header" id="header">
+            <a class="logo_img_ref" href="{% url 'mainpage' %}">
+                <img class="logo_img" src="{% static 'images/logo.png' %}" alt="Logo">
+            </a>
+            <div class="burger-menu" onclick="toggleMenu()">☰</div>
+            <div class="navigation" id="navigation">
+                <a href="{% url 'build' %}">Ремонт квартир</a>
+                <a href="{% url 'assessment' %}">Приемка ремонта</a>
+                <a href="{% url 'design' %}">Дизайн-проект</a>
+            </div>
+            <div class="header-right-panel">
+                <p>8 (995) 870 00 94</p>
+                <div class="header-icons">
+                    <a href="https://wa.me/79958700094" target="_blank">
+                        <img class="icon" src="{% static 'images/whatsapp.png' %}" alt="WhatsApp">
+                    </a>
+                    <a href="https://t.me/NasagGroup" target="_blank">
+                        <img class="icon" src="{% static 'images/telega.png' %}" alt="Telegram">
+                    </a>
+                </div>
+            </div>
+            <button class="header-button" onclick="openModal()">Оставить заявку</button>
+        </div>
+
+        {% block content %}{% endblock %}
+        {% include 'html/modal.html' %}
+        {% include 'html/map.html' %}
+        <div class="custom-footer">
+            <div class="custom-footer-content">
+                <!-- Логотип и описание -->
+                <div class="custom-footer-logo">
+                    <a href="{% url 'mainpage' %}">
+                        <img class="custom-footer_logo_img" src="{% static 'images/logo.png' %}" alt="Nasag Group">
+                    </a>
+                    <p>Nasag Group 2019–2024</p>
+                    <p>Developed by IT-Solutions</p>
+                </div>
+
+                <!-- Услуги -->
+                <div class="custom-footer-services">
+                    <a href="{% url 'mainpage' %}">
+                        <h6>Наши услуги</h6>
+                    </a>
+                    <ul>
+                        <li><a href="{% url 'assessment' %}">Приемка квартир после ремонта</a></li>
+                        <li><a href="{% url 'build' %}">Ремонт квартир в новостройках</a></li>
+                        <li><a href="{% url 'design' %}">Дизайн-проекты</a></li>
+                        <li><a href="{% url 'build' %}">Ремонт квартир в частных домах</a></li>
+                    </ul>
+                </div>
+
+                <!-- Полезные ссылки -->
+                <div class="custom-footer-links">
+                    <a href="{% url 'mainpage' %}">
+                        <h6>Полезные ссылки</h6>
+                    </a>
+                    <ul>
+                        <li><a href="{% url 'build' %}">Наши проекты</a></li>
+                        <li><a href="{% url 'build' %}">Контакты</a></li>
+                        <li><a href="{% static 'docs/politica.pdf' %}" target="_blank">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+
+                <!-- Контактный номер -->
+                <div class="custom-footer-contact">
+                    +7 (995) 870-00-94
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="{% static 'js/header.js' %}"></script>
+<script>
+    function toggleMenu() {
+        const navigation = document.getElementById('navigation');
+        navigation.classList.toggle('active');
+    }
+</script>
+{% block scripts %}{% endblock %}
+</html>

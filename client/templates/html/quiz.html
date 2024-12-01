@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/quiz_form.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Форма квиза, отображается как обычный блок -->
+    <div class="quiz">
+        <div class="quiz-container">
+            <div class="stage stage1 show">
+                <div class="our_block">
+                    <div class="quiz-header">
+                        <div class="title-quiz">
+                            Где необходимо сделать ремонт?
+                        </div>
+                    </div>
+                    <form class="quiz-form">
+                        <div class="choose_house">
+                            <div class="house_block" onclick="selectHouse(this)">
+                                <div class="checkmark"></div>
+                                <img src="{% static 'images/new_house.jpeg' %}">
+                                <p style="margin: 0;">В новостройке</p>
+                            </div>
+                            <div class="house_block" onclick="selectHouse(this)">
+                                <div class="checkmark"></div>
+                                <img src="{% static 'images/old_house.jpg' %}">
+                                <p style="margin: 0;">В старом доме</p>
+                            </div>
+                            <div class="house_block" onclick="selectHouse(this)">
+                                <div class="checkmark"></div>
+                                <img src="{% static 'images/kotteg.jpg' %}">
+                                <p style="margin: 0;">В коттедже</p>
+                            </div>
+                            <div class="house_block" onclick="selectHouse(this)">
+                                <div class="checkmark"></div>
+                                <img src="{% static 'images/kommerc.jpeg' %}">
+                                <p style="margin: 0;">В коммерческом помещении</p>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <button class="back" type="button" onclick="changeStage(1, 1)">Назад</button>
+                            <button class="next" type="button" onclick="changeStage(1, 2)">Следующий вопрос</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="stage stage2">
+                <div class="quiz-header">
+                    <div class="title-quiz">
+                        Выберите примерную площадь ремонта
+                    </div>
+                </div>
+                <form class="quiz-form">
+                    <label class="custom-radio">
+                        <input type="radio" name="size" value="10-50">
+                        <span class="radio-label">10-50 м²</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="size" value="51-70">
+                        <span class="radio-label">51-70 м²</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="size" value="71-90">
+                        <span class="radio-label">71-90 м²</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="size" value="91-120">
+                        <span class="radio-label">91-120 м²</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="size" value="121-150">
+                        <span class="radio-label">121-150 м²</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="size" value="151-200">
+                        <span class="radio-label">151-200 м²</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="size" value="200+">
+                        <span class="radio-label">свыше 200 м²</span>
+                    </label>                    
+                    <div class="buttons">
+                        <button class="back" type="button" onclick="changeStage(2, 1)">Назад</button>
+                        <button class="next" type="button" onclick="changeStage(2, 3)">Следующий вопрос</button>
+                    </div>
+                </form>
+            </div>
+            <div class="stage stage3">
+                <div class="quiz-header">
+                    <div class="title-quiz">
+                        У вас есть дизайн проект?
+                    </div>
+                </div>
+                <form class="quiz-form">
+                    <label class="custom-radio">
+                        <input type="radio" name="size" value="121-150">
+                        <span class="radio-label">Да</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="size" value="151-200">
+                        <span class="radio-label">Нет</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="size" value="200+">
+                        <span class="radio-label">Планирую заказать</span>
+                    </label>   
+                    <div class="buttons">
+                        <button class="back" type="button" onclick="changeStage(3, 2)">Назад</button>
+                        <button class="next" type="button" onclick="changeStage(3, 4)">Следующий вопрос</button>
+                    </div>
+                </form>
+            </div>
+            <div class="stage stage4">
+                <div class="quiz-header">
+                    <div class="title-quiz">
+                        Какое состояние помещения?
+                    </div>
+                </div>
+                <form class="quiz-form">
+                    <label class="custom-radio">
+                        <input type="radio" name="size" value="151-200">
+                        <span class="radio-label">Новое</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="size" value="200+">
+                        <span class="radio-label">Уже использовалось</span>
+                    </label>   
+                    <div class="buttons">
+                        <button class="back" type="button" onclick="changeStage(4, 3)">Назад</button>
+                        <button class="next" type="button" onclick="changeStage(4, 5)">Следующий вопрос</button>
+                    </div>
+                </form>
+            </div>
+            <div class="stage stage5">
+                <div class="quiz-header">
+                    <div class="title-quiz">
+                        Как скоро планируете приступить к ремонту?
+                    </div>
+                </div>
+                <form class="quiz-form">
+                    <label class="custom-radio">
+                        <input type="radio" name="size" value="200+">
+                        <span class="radio-label">В течение недели</span>
+                    </label>  
+                    <label class="custom-radio">
+                        <input type="radio" name="size" value="200+">
+                        <span class="radio-label">В течение месяца</span>
+                    </label>  
+                    <label class="custom-radio">
+                        <input type="radio" name="size" value="200+">
+                        <span class="radio-label">Пока прицениваюсь</span>
+                    </label>  
+                    <div class="buttons">
+                        <button class="back" type="button" onclick="changeStage(5, 4)">Назад</button>
+                        <button class="next" type="button" onclick="changeStage(5, 6)">Следующий вопрос</button>
+                    </div>
+                </form>
+            </div>
+            <div class="stage stage6">
+                <div class="quiz-header">
+                    <div class="title-quiz">
+                        Выберите удобный способ связи
+                    </div>
+                </div>
+                <form class="quiz-form">
+                    <label class="custom-radio">
+                        <input type="radio" name="size" value="200+">
+                        <span class="radio-label">WhatsApp</span>
+                    </label>  
+                    <label class="custom-radio">
+                        <input type="radio" name="size" value="200+">
+                        <span class="radio-label">Telegram</span>
+                    </label>  
+                    <div class="buttons">
+                        <button class="back" type="button" onclick="changeStage(6, 5)">Назад</button>
+                        <button class="next" type="button" onclick="changeStage(6, 7)">Последний вопрос</button>
+                    </div>
+                </form>
+            </div>
+            <div class="stage stage7">
+                <div class="quiz-header">
+                    <div class="title-quiz">
+                        Ваш телефон
+                    </div>
+                </div>
+                <form class="quiz-form">
+                    <div class="buttons">
+                        <button class="back" type="button" onclick="changeStage(7, 6)">Назад</button>
+                        <button class="next" type="button" onclick="changeStage(7, 7)">Узнать результат</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/quiz_form.js' %}"></script>
+    <script>
+        function selectHouse(element) {
+            // Проверяем, был ли элемент уже выбран
+            if (element.classList.contains('selected')) {
+                // Если был выбран, убираем выделение
+                element.classList.remove('selected');
+            } else {
+                // Если не был выбран, добавляем выделение ко всем элементам
+                document.querySelectorAll('.house_block').forEach(house => {
+                    house.classList.remove('selected');
+                });
+
+                // Добавляем выделение к текущему элементу
+                element.classList.add('selected');
+            }
+        }
+    </script>
+</body>
+</html>

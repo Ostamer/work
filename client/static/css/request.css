@@ -1,0 +1,100 @@
+/* Убедитесь, что html и body занимают всю высоту окна */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.request_card {
+    width: 100%;
+    height: 90vh; /* Устанавливаем высоту в 50% высоты экрана */
+    display: flex;
+    border-radius: 25px;
+    background-color: white;
+    position: relative;
+}
+
+
+.text_info {
+    font-style: normal;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 4%;
+    margin-top: 5%;
+    z-index: 2; /* Убедитесь, что текст будет поверх изображения */
+    position: relative;
+    h1{
+        font-size: 36px;
+        font-weight: 600;
+    }
+    h3{
+        font-size: 20px;
+        font-weight: 400;
+        color:#000;
+    }
+    h2{
+        font-size: 22px;
+        font-weight: 500;
+        color: #000;
+    }
+}
+
+
+.image_container {
+    width: 60%; /* Ограничиваем ширину изображения */
+    height: 100%; /* Изображение будет занимать всю высоту контейнера */
+    overflow: hidden; /* Обрезаем часть изображения, если оно выходит за пределы контейнера */
+    display: flex; /* Flexbox для управления содержимым */
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    justify-content: flex-end; /* Выравниваем содержимое по правому краю */
+}
+.image_container img {
+    object-fit: contain; /* Сохраняем пропорции, изображение полностью вписывается в контейнер */
+}
+
+.input_container{
+    margin-top: 5%;
+    border: 2px;
+    border-color: black;
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.input_field, .phone_field {
+    width: 80%;
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: 0.3s;
+    color:black;
+}
+
+.submit_button {
+    border: 0px;
+    width: 30%;
+    height:auto;
+    background-color: #ffce53;
+    color: black;
+    font-size: 16px;
+    font-weight:700;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.consent_text {
+    font-size: 14px;
+    color: gray;
+    margin-top: 10px;
+}
+
+.consent_text a {
+    color: blue;
+    text-decoration: underline;
+}

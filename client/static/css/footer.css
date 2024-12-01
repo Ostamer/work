@@ -1,0 +1,122 @@
+.custom-footer {
+    background-color: black;
+    color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+    padding: 20px 50px;
+    font-family: 'Montserrat', sans-serif;
+    a {
+        text-decoration: none;
+    }
+}
+
+.custom-footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap; /* Оставляем горизонтальное расположение для десктопа */
+}
+
+.custom-footer-logo {
+    text-align: left;
+    color: #BCBCBC;
+    font-size: 12px;
+}
+
+.custom-footer-logo img {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.custom-footer-services h6,
+.custom-footer-links h6 {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    font-weight: bold;
+}
+
+.custom-footer-services ul,
+.custom-footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.custom-footer-services ul li,
+.custom-footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.custom-footer-services ul li a,
+.custom-footer-links ul li a {
+    text-decoration: none;
+    color: #BCBCBC;
+    font-size: 14px;
+}
+
+.custom-footer-services ul li a:hover,
+.custom-footer-links ul li a:hover {
+    color: white;
+}
+
+.custom-footer-contact {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+}
+
+.custom-footer-contact a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.custom-footer-contact .custom-footer-whatsapp-icon {
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .custom-footer {
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 20px;
+    }
+
+    .custom-footer-content {
+        flex-direction: column; /* Переключаемся на столбец */
+        align-items: center; /* Центрируем элементы */
+    }
+
+    .custom-footer-logo {
+        text-align: center; /* Логотип по центру */
+        margin-bottom: 20px;
+    }
+
+    .custom-footer-services,
+    .custom-footer-links {
+        text-align: center; /* Центрируем текст */
+        margin-bottom: 20px; /* Расстояние между секциями */
+    }
+
+    .custom-footer-services ul,
+    .custom-footer-links ul {
+        padding: 0;
+    }
+
+    .custom-footer-contact {
+        margin-top: 20px;
+        justify-content: center; /* Центрируем контактный блок */
+    }
+}

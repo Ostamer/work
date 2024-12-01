@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+
+{% endblock %}
+
+{% block content %}
+    {% include 'html/slider-build.html' %}
+<div class="main-container" style="background-color:black;">
+    <div class="main">
+        <div class="title">
+            <h1>
+                <span style="color: #fff;">ПРЕИМУЩЕСТВА РЕМОНТА С NASAG GROUP </span></br>
+                <span style="color: #FFCE53;">за 2023 год выполнили приемку на 154 объектах</span>
+            </h1>
+        </div>
+        <div class="prem-block">
+            <div class="prem-container">
+                <div class="prem-container-content">
+                    <img src="{% static 'images/approve.svg' %}" alt="Оценка">
+                    <div class="prem-container-content-in">
+                        <h1>КАЧЕСТВО СТРОИТЕЛЬНО-МОНТАЖНЫХ РАБОТ</h1>
+                        <h2>Обследование стен, пола, потолка на предмет отклонений от требований СНиП.</h2>
+                    </div>
+                </div>
+                <div class="prem-container-content">
+                    <img src="{% static 'images/approve.svg' %}" alt="Оценка">
+                    <div class="prem-container-content-in">
+                        <h1>РАБОТОСПОСОБНОСТЬ ИНЖЕНЕРНЫХ СИСТЕМ</h1>
+                        <h2>Вентиляция, электрика (розетки, освещение, автоматы), система отопления, стояки ГВС и ХВС.</h2>
+                    </div>
+                </div>
+                <div class="prem-container-content">
+                    <img src="{% static 'images/approve.svg' %}" alt="Оценка">
+                    <div class="prem-container-content-in">
+                        <h1>КАЧЕСТВО РЕМОНТНО-ОТДЕЛОЧНЫХ РАБОТ</h1>
+                        <h2>Обследование отделочных покрытий стен, пола, потолка на предмет отклонений от требований СниП и ГОСТ.</h2>
+                    </div>
+                </div>
+                <div class="prem-container-content">
+                    <img src="{% static 'images/approve.svg' %}" alt="Оценка">
+                    <div class="prem-container-content-in">
+                        <h1>СПЕЦИАЛИЗИРОВАННОЕ ОБОРУДОВАНИЕ</h1>
+                        <h2>Мы используем только специализированное оборудование, которое помогает выявить максимальное количество недостатков!</h2>
+                    </div>
+                </div>
+                <div class="prem-container-content">
+                    <img src="{% static 'images/approve.svg' %}" alt="Оценка">
+                    <div class="prem-container-content-in">
+                        <h1>КАЧЕСТВО МОНТАЖА И ЦЕЛОСТНОСТЬ ОКОН/ДВЕРЕЙ</h1>
+                        <h2>Обследование качества монтажа конструкций, правильность работы механизмов, продувание, внешний осмотр на предмет целостности.</h2>
+                    </div>
+                </div>
+                <div class="prem-container-content">
+                    <img src="{% static 'images/approve.svg' %}" alt="Оценка">
+                    <div class="prem-container-content-in">
+                        <h1>ОПЕРАТИВНАЯ РАБОТА</h1>
+                        <h2>Мы подготавливаем квартиру, а вы новоселье!</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="docs-container">
+            <div class="docs-content">
+                <div class="docs-container-img">
+                    <img src="{% static 'images/build-docs-first.jpg' %}" alt="Оценка">
+                    <img src="{% static 'images/build-docs-second.jpg' %}" alt="Оценка">
+                    <img src="{% static 'images/build-docs-third.jpg' %}" alt="Оценка">
+                </div>
+<!--                <div class="docs-container-text" style="color:black">-->
+<!--                    <p>Мы составляем подробный дизайн-проект и смету!</p>-->
+<!--                    <h3>Вам точно будет понятно, что именно вы покупаете и какие именно работы мы будем производить.</h3>-->
+<!--                    <h4>Смета представляет собой список работ и необходимых материалов со стоимость. и детализацией всех трат. Вы сможете легко контролировать ваш бюджет на ремонт.</h4>-->
+<!--                </div>-->
+            </div>
+        </div>
+        <div class="title">
+            <h1>
+                <span style="color: #fff;">НАША ПРОФЕССИОНАЛЬНАЯ КОМАНДА</span></br>
+                <span style="color: #FFCE53;">готовая помочь вам с приемкой ремонта</span>
+            </h1>
+        </div>
+        {% include 'html/slider-team.html' %}
+        <div class="title"></div>
+        {% include 'html/request.html' %}
+        <div class="title"></div>
+
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+    window.addEventListener('scroll', function() {
+        const container = document.querySelector('.docs-container');
+        const textElement = document.querySelector('.docs-container-text');
+        const containerRect = container.getBoundingClientRect();
+        const scrollPosition = window.scrollY - containerRect.top;
+
+        // Ограничиваем движение текста в пределах контейнера
+        const containerHeight = container.offsetHeight;
+        const textHeight = textElement.offsetHeight;
+
+        // Вычисляем позицию текста в пределах контейнера
+        let position = (scrollPosition * 0.5); // 0.2 определяет скорость движения текста относительно прокрутки
+
+        // Ограничиваем движение текста так, чтобы он оставался внутри контейнера
+        position = Math.min(Math.max(position, 0), containerHeight - textHeight);
+
+        // Применяем вычисленную позицию
+        textElement.style.transform = `translateY(${position}px)`; // Используем translateY для вертикального перемещения
+    });
+</script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+{% endblock %}

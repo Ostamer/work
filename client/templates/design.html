@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+
+{% endblock %}
+{% block content %}
+<div class="main-container" style="background-color:black;">
+    <div class="background-block-first-screen-assessment">
+        <div class="custom-block">
+            <h1 class="welcome-text-block">
+                <span class="orange-background">НАШИ ПРОЕКТЫ ДЛЯ ВАС</span>
+            </h1>
+            <h1 class="white-text">ИНДВИДУАЛЬНЫЕ РЕШЕНИЯ</h1>
+            <h1 class="white-text">ВЫСОЧАЙШЕГО КАЧЕСТВА</h1>
+            <div class="icons-container">
+                <a href="https://wa.me/79958700094" style="text-align:center; text-decoration:none;" class="black-button">ВЫЗВАТЬ ОЦЕНЩИКА</a>
+                <button class="yellow-button" onclick="openModal()">РАССЧИТАТЬ СТОИМОСТЬ</button>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="title">
+            <h1>
+                <span style="color: #fff;">НАША ПРОФЕССИОНАЛЬНАЯ КОМАНДА</span></br>
+                <span style="color: #FFCE53;">готовая помочь вам с приемкой ремонта</span>
+            </h1>
+        </div>
+        {% include 'html/slider-team.html' %}
+        <div class="title"></div>
+        {% include 'html/request.html' %}
+        <div class="title"></div>
+    </div>
+</div>
+
+{% endblock %}

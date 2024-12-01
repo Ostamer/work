@@ -1,0 +1,40 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/request.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+
+<div class="modal" id="customModal" onclick="closeModal(event)" style="display: none;">
+    <div class="modal-content" onclick="event.stopPropagation();">  <!-- Останавливаем всплытие события клика -->
+        <button class="modal-close" onclick="closeModal()">
+            <img src="{% static 'images/x.png' %}" style="color:black; width:22px; height:20px;" alt="Закрыть">
+        </button>
+        <h1 class="welcom-text-block">
+            <span class="orange-background">Оставьте контактные данные и мы свяжемся</span><br>
+            <span class="orange-background">с вами в течение 3 рабочих часов!</span>
+        </h1>
+        <h3>Получите 30.000 в подарок на закупку материалов.</h3>
+        <p>График работы:</p>
+        <p>9:00 - 20:00 пн-пт  Выходной - сб, вс</p>
+        <form class="input_container">
+            <input type="text" placeholder="Ваше имя" class="input_field" required />
+            <input type="tel" placeholder="+7 (999) 999-99-99" class="phone_field" required />
+            <button type="submit" class="submit_button">Отправить заявку</button>
+        </form>
+    </div>
+</div>
+
+
+<script>
+    function openModal() {
+        document.getElementById('customModal').style.display = 'block';
+    }
+
+    function closeModal(event) {
+        if (event) {
+            event.stopPropagation();  // Останавливаем дальнейшее распространение события
+        }
+        document.getElementById('customModal').style.display = 'none';
+    }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://unpkg.com/imask"></script>
+<script src="{% static 'js/ajax.js' %}"></script>
