@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: django_app
+    volumes:
+      - ./staticfiles:/app/staticfiles # Монтируем локальную папку static для исходных файлов
+    ports:
+      - "8000:8000"
+    depends_on:
+      - nginx
+
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./staticfiles:/app/staticfiles  # Монтируем локальную папку static для исходных файлов
